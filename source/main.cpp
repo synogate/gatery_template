@@ -1,5 +1,6 @@
-#include <hcl/frontend.h>
-#include <hcl/export/vhdl/VHDLExport.h>
+#include <gatery/frontend.h>
+#include <gatery/export/vhdl/VHDLExport.h>
+#include <iostream>
 
 using namespace gtry;
 
@@ -11,9 +12,9 @@ int main()
         Clock clock{125'000'000}; // 125MHz
         ClockScope clockScope{ clock };
 
-        core::hlim::ClockRational blinkFrequency{1, 1}; // 1Hz
+        hlim::ClockRational blinkFrequency{1, 1}; // 1Hz
 
-        size_t counterMax = core::hlim::floor(clock.getAbsoluteFrequency() / blinkFrequency);
+        size_t counterMax = hlim::floor(clock.getAbsoluteFrequency() / blinkFrequency);
 
         BVec counter = BitWidth(utils::Log2C(counterMax+1));
         counter = reg(counter+1, 0);
@@ -22,9 +23,9 @@ int main()
         pinOut(counter.msb()).setName("led");
     }
 
-    gtry::scl::adaptToArchitecture(design.getCircuit(), gtry::scl::DefaultArch{});
+    design.getCircuit().postprocess(DefaultPostprocessing{});
 
-    core::vhdl::VHDLExport vhdl{"vhdl/"};
+    vhdl::VHDLExport vhdl{"vhdl/"};
     vhdl(design.getCircuit());
     vhdl.writeVivadoScript("vivado.tcl");
 
