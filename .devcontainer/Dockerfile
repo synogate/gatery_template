@@ -16,4 +16,4 @@ RUN cp tmp/premake5 usr/bin/
 #    ./bootstrap.sh && \
 #    ./b2 && \
 #    ./b2 install
-vcpkg install boost
+RUN vcpkg install boost
