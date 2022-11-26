@@ -31,5 +31,12 @@
 		"ms-vscode.makefile-tools"
 	],
 	// Command to be executed after the container is created.
-	"postCreateCommand": ".devcontainer/post.sh"
+	"postCreateCommand": ".devcontainer/post.sh",
+	"customizations": {
+	"codespaces": {
+		"openFiles": [
+			"source/main.cpp"
+		]
+	}
+	}
 }
