@@ -20,6 +20,12 @@ workspace "gatery-template"
 
     filter "system:linux"
         buildoptions { "-std=c++2a", "-fcoroutines"}
+        includedirs {
+            "/usr/local/vcpkg/installed/x64-linux/include/"
+        }
+        libdirs {
+            "/usr/local/vcpkg/installed/x64-linux/lib/"
+        }
 
     project "gatery-template"
         kind "ConsoleApp"
