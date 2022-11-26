@@ -16,7 +16,14 @@
 			"libs/gatery/source/",
 			"${default}"
 		],
-		"C_Cpp.default.configurationProvider": "ms-vscode.makefile-tools"
+		"C_Cpp.default.configurationProvider": "ms-vscode.makefile-tools",
+		"makefile.launchConfigurations": [
+			{
+				"cwd": "/workspaces/gatery_template/bin/linux-x86_64-Debug",
+				"binaryPath": "/workspaces/gatery_template/bin/linux-x86_64-Debug/gatery-template",
+				"binaryArgs": []
+			}
+		]		
 	},
 	// Visual Studio Code extensions (plugins) to be installed.
 	"extensions": [
