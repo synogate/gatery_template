@@ -35,14 +35,10 @@ workspace "gatery-template"
             "%{prj.location}/libs/gatery/source",
         }
 
-        filter "system:linux"
-            links { 
-                "boost_unit_test_framework", 
-                "boost_program_options", 
-                "dl" 
-            }
-
-
 include "libs/gatery/source/premake5.lua"
 -- Enable to also build unit tests of gatery
 -- include "libs/gatery/tests/premake5.lua"
+
+
+    project "*"
+        GateryWorkspaceDefaults()
