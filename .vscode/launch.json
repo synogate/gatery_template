@@ -21,7 +21,8 @@
                     "text": "-enable-pretty-printing",
                     "ignoreFailures": true
                 }
-            ]
+            ],
+            "preLaunchTask": "buildAllDebug"
         },    
         {
             "name": "(gdb) Unit test gatery",
@@ -40,7 +41,8 @@
                     "text": "-enable-pretty-printing",
                     "ignoreFailures": true
                 }
-            ]
+            ],
+            "preLaunchTask": "buildAllDebug"
         },
         {
             "name": "(gdb) Unit test gatery SCL",
@@ -59,7 +61,8 @@
                     "text": "-enable-pretty-printing",
                     "ignoreFailures": true
                 }
-            ]
+            ],
+            "preLaunchTask": "buildAllDebug"
         }
 
     ]

@@ -28,14 +28,16 @@
 	// Visual Studio Code extensions (plugins) to be installed.
 	"extensions": [
 		"ms-vscode.cpptools",
-		"ms-vscode.makefile-tools"
+		"ms-vscode.makefile-tools",
+		"wavetrace.wavetrace"
 	],
 	// Command to be executed after the container is created.
 	"onCreateCommand": ".devcontainer/post.sh",
 	"customizations": {
 	"codespaces": {
 		"openFiles": [
-			"source/main.cpp"
+			"source/main.cpp",
+			"README.md"
 		]
 	}
 	}
