@@ -84,7 +84,7 @@ int main()
 
 	// Optional: VHDL export
 	VHDLExport vhdl("vhdl/");
-	vhdl.addTestbenchRecorder(simulator, "testbench", false);
+	vhdl.addTestbenchRecorder(simulator, "testbench", true);
 	vhdl.targetSynthesisTool(new IntelQuartus());
 	vhdl.writeProjectFile("import_IPCore.tcl");
 	vhdl.writeStandAloneProjectFile("IPCore.qsf");
