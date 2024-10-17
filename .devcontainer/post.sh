@@ -1,4 +1,6 @@
 #!/bin/sh
 git submodule update --init --recursive
-premake5 gmake2
+mkdir build
+cd build
+cmake ..
 make -j 2

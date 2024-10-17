@@ -16,19 +16,12 @@
 			"libs/gatery/source/",
 			"${default}"
 		],
-		"C_Cpp.default.configurationProvider": "ms-vscode.makefile-tools",
-		"makefile.launchConfigurations": [
-			{
-				"cwd": "/workspaces/gatery_template/bin/linux-x86_64-Debug",
-				"binaryPath": "/workspaces/gatery_template/bin/linux-x86_64-Debug/gatery-template",
-				"binaryArgs": []
-			}
-		]		
+		"C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
 	},
 	// Visual Studio Code extensions (plugins) to be installed.
 	"extensions": [
 		"ms-vscode.cpptools",
-		"ms-vscode.makefile-tools",
+		"ms-vscode.cmake-tools",
 		"wavetrace.wavetrace"
 	],
 	// Command to be executed after the container is created.
