@@ -1,8 +1,4 @@
 #!/bin/sh
-
-# todo: I need to update the docker image
-vcpkg install boost-flyweight
-
 git submodule update --init --recursive
 mkdir build
 cd build

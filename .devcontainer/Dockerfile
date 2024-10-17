@@ -14,3 +14,7 @@ FROM andreasley/codespace_cpp_boost:ubuntu-22.04
 #     cp tmp/premake5 usr/bin/
 # 
 # RUN vcpkg install boost-test boost-program-options boost-filesystem boost-format boost-lexical-cast boost-hana boost-mpi boost-property-tree boost-stacktrace boost-pfr boost-multiprecision boost-process boost-beast boost-iostreams boost-json
+
+
+# todo: I need to update the docker image
+RUN vcpkg install boost-flyweight
