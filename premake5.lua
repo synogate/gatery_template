@@ -18,25 +18,25 @@ workspace "gatery-template"
         runtime "Release"
         optimize "On"
 
-    filter "system:linux"
-        buildoptions { "-std=c++2a", "-fcoroutines"}
-
-    project "gatery-template"
-        kind "ConsoleApp"
-        links { "gatery"}
-        files { "source/**" }
-        includedirs { 
-            "%{prj.location}/libs/gatery/source",
-        }
-
-        filter "system:linux"
-            links { 
-                "boost_unit_test_framework", 
-                "boost_program_options", 
-                "dl" 
+    group ""
+        project "gatery-template"
+            kind "ConsoleApp"
+            links { "gatery_core", "gatery_scl" }
+            files { "source/**" }
+            includedirs { 
+                "%{prj.location}/gatery/source", 
+                "%{prj.location}/gatery/source/gen/"
             }
 
+            filter "system:linux"
+                links { 
+                    "boost_unit_test_framework", 
+                    "boost_program_options", 
+                    "dl" 
+                }
 
-include "libs/gatery/source/premake5.lua"
--- Enable to also build unit tests of gatery
--- include "libs/gatery/tests/premake5.lua"
+    group "gatery"
+        include "libs/gatery/source/premake5.lua"
+
+    project "*"
+        GateryWorkspaceDefaults()
